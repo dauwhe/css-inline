@@ -1,0 +1,129 @@
+<h1>Wrapping Around Initial Letters</h1>
+
+
+<pre class='metadata'>
+Status: DREAM
+Shortname: css-inline
+Level: 1
+Group: DPUB
+Work Status: Exploring
+ED: http://dauwhe.github.io/css-inline/
+Editor: Dave Cramer, Hachette Livre, dauwhe@gmail.com
+Abstract: The CSS formatting model provides for a flow of elements and text inside of a container to be wrapped into lines.  The formatting of elements and text within a line, its positioning in the inline progression direction, and the breaking of lines are described in [[CSS3TEXT]].  This module describes the positioning in the block progression direction both of elements and text within lines and of the lines themselves.  This positioning is often relative to a baseline.  It also describes special features for formatting of first lines and drop caps.  It extends on the model in [[CSS2]].
+</pre>
+
+<h2 class="no-num" id="introduction">
+Introduction
+</h2>
+
+
+At the Sydney F2F we <a href="https://lists.w3.org/Archives/Public/www-style/2015Mar/0315.html">resolved</a> to add full kerning around initial letters. I've attempted to describe a procedure for doing so.
+
+<h2 id="initial-letter-wrapping">
+Initial Letter Wrapping</h2>
+
+Issue: should this all be defined in terms of shape-outside instead? 
+
+
+<pre class="propdef">
+Name: <dfn id="propdef-initial-letter-wrap">initial-letter-wrap</dfn>
+Value: none | auto | first-line
+Initial: none
+Applies to: <code>::first-letter</code> pseudo-elements and inline-level first child of a block container
+Inherited: no
+Percentages: N/A
+Media: visual
+Computed value: as specified
+</pre>
+
+<dl dfn-for=initial-letter-wrap dfn-type=value>
+<dt><dfn>none</dfn>
+<dd>No wrapping is performed.</dd>
+<dt><dfn>auto</dfn></dt>
+<dd>For each line of text impacted by the initial letter, the line box adjacent to the intial letter starts at the left-most point that touches the ink of the initial letter, plus a fixed amount of offset.</dd>
+
+Issue: How much offset? Based on the right side-bearing of the initial letter? That could be a problem as it's sometimes negative (see Zapfino). 
+
+<dt><dfn>first-line</dfn>
+<dd>As auto, but wrapping only performed on the first line of the block containing the initial letter.</dd>
+</dl>
+
+Issue: Rewrite for logical directions.
+
+Issue: Bikeshed value names. 
+
+
+Issue: Do we need anything else for scripts where this behavior is undesirable? Or is default "none" sufficient? 
+
+
+Note: If the next character after the initial letter is a whitespace character, auto and first-line compute to none, in order to avoid the initial letter appearing to be part of the subsequent word. 
+
+
+<div class="example">
+<pre>
+p::first-letter {
+  initial-letter: 3;
+  initial-letter-wrap: none;
+}
+</pre>
+
+<img alt="regular dropcap A"  src="images/A-wraparound-none.png" width="600">
+Ordinary initial letter with no wrapping. 
+</figure>
+</div>
+
+
+<div class="example">
+<pre>
+p::first-letter {
+  initial-letter: 3;
+  initial-letter-wrap: auto;
+}
+</pre>
+<img alt="text wrapping around dropcap A"  src="images/A-wraparound.png" width="600">
+
+Text follows shape of initial letter. Each line box should just touch the ink of the letter, with some offset (represented by the shaded box).
+
+</div>
+
+
+<div class="example">
+<pre>
+p::first-letter {
+  initial-letter: 3;
+  initial-letter-wrap: first-line;
+}
+</pre>
+
+<img alt="text wrapping around dropcap A but only on first line"  src="images/A-wraparound-first.png" width="600">
+
+Only first line is moved up against the ink of the initial letter.
+
+</div>
+
+
+<div class="example">
+
+  <img alt="text wrapping around dropcap V"  src="images/V-wraparound.png" width="600">
+
+</div>
+
+<div class="example">
+
+  <img alt="text wrapping around dropcap P"  src="images/P-wraparound.png" width="600">
+
+</div>
+
+<div class="example">
+
+  <img alt="text wrapping around dropcap W"  src="images/W-wraparound.png" width="600">
+
+</div>
+
+Issue: What should happen with initial letters that are concave on the (right) side? Wrapping the middle line in a three-line initial "K" can look very strange. 
+
+
+
+
+
+
