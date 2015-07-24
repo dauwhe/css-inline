@@ -986,7 +986,7 @@
    <h1 class="p-name no-ref" id="title">Wrapping Around Initial Letters</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">A Collection of Interesting Ideas,
-    <time class="dt-updated" datetime="2015-07-23">23 July 2015</time></span></h2>
+    <time class="dt-updated" datetime="2015-07-24">24 July 2015</time></span></h2>
   
    <div data-fill-with="spec-metadata">
     <dl>
@@ -1004,7 +1004,7 @@
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a>
 To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 23 July 2015,
+In addition, as of 24 July 2015,
 the editors have made this specification available under the
 <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
@@ -1116,7 +1116,7 @@ Initial Letter Wrapping</span><a class="self-link" href="#initial-letter-wrappin
     <dd>For each line of text impacted by the initial letter, the line box adjacent to the intial letter starts at the left-most point that touches the ink of the initial letter, plus a fixed amount of offset.
 
 
-    <p class="issue" id="issue-3f3d3866"><a class="self-link" href="#issue-3f3d3866"></a> how much offset? Based on the right side-bearing of the initial letter? That could be a problem as it’s sometimes negative (see Zapfino).</p>
+    <p class="issue" id="issue-3b55d2eb"><a class="self-link" href="#issue-3b55d2eb"></a> How much offset? Based on the right side-bearing of the initial letter? That could be a problem as it’s sometimes negative (see Zapfino).</p>
 
 
     <dt><dfn class="css" data-dfn-for="initial-letter-wrap" data-dfn-type="value" data-export="" id="valdef-initial-letter-wrap-first-line">first-line<a class="self-link" href="#valdef-initial-letter-wrap-first-line"></a></dfn>
@@ -1125,7 +1125,7 @@ Initial Letter Wrapping</span><a class="self-link" href="#initial-letter-wrappin
 </dl>
 
 
-   <p class="issue" id="issue-796c0617"><a class="self-link" href="#issue-796c0617"></a> rewrite for logical directions.</p>
+   <p class="issue" id="issue-ef4ece75"><a class="self-link" href="#issue-ef4ece75"></a> Rewrite for logical directions.</p>
 
 
    <p class="issue" id="issue-83b404e8"><a class="self-link" href="#issue-83b404e8"></a> Bikeshed value names.</p>
@@ -1140,7 +1140,7 @@ Initial Letter Wrapping</span><a class="self-link" href="#initial-letter-wrappin
 
 
 
-   <div class="example" id="example-c6a7543f"><a class="self-link" href="#example-c6a7543f"></a>
+   <div class="example" id="example-768e3a03"><a class="self-link" href="#example-768e3a03"></a>
 
     <pre>p::first-letter {
   initial-letter: 3;
@@ -1149,8 +1149,10 @@ Initial Letter Wrapping</span><a class="self-link" href="#initial-letter-wrappin
 </pre>
 
 
-    <p><img alt="regular dropcap A" src="images/A-wraparound-none.png" width="600">
-Ordinary initial letter with no wrapping.</p>
+    <p><img alt="regular dropcap A" src="images/A-wraparound-none.png" width="600"></p>
+
+
+    <p>Ordinary initial letter with no wrapping.</p>
 
 </div>
 
@@ -1322,8 +1324,8 @@ Conformance</span><a class="self-link" href="#conformance"></a></h2>
   <h2 class="no-num heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue"> should this all be defined in terms of shape-outside instead?<a href="#issue-845f2fcc"> ↵ </a></div>
-   <div class="issue"> how much offset? Based on the right side-bearing of the initial letter? That could be a problem as it’s sometimes negative (see Zapfino).<a href="#issue-3f3d3866"> ↵ </a></div>
-   <div class="issue"> rewrite for logical directions.<a href="#issue-796c0617"> ↵ </a></div>
+   <div class="issue"> How much offset? Based on the right side-bearing of the initial letter? That could be a problem as it’s sometimes negative (see Zapfino).<a href="#issue-3b55d2eb"> ↵ </a></div>
+   <div class="issue"> Rewrite for logical directions.<a href="#issue-ef4ece75"> ↵ </a></div>
    <div class="issue"> Bikeshed value names.<a href="#issue-83b404e8"> ↵ </a></div>
    <div class="issue"> Do we need anything else for scripts where this behavior is undesirable? Or is default "none" sufficient?<a href="#issue-d0eaa352"> ↵ </a></div>
    <div class="issue"> What should happen with initial letters that are concave on the (right) side? Wrapping the middle line in a three-line initial "K" can look very strange.<a href="#issue-c3638886"> ↵ </a></div>

@@ -68,6 +68,7 @@ p::first-letter {
 </pre>
 
 <img alt="regular dropcap A"  src="images/A-wraparound-none.png" width="600">
+
 Ordinary initial letter with no wrapping. 
 </figure>
 </div>
